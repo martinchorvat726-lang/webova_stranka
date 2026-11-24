@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Šachový Portál - Pravidlá</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">♔ Šachový<span>Portál</span></div>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Domov</a></li>
+                <li><a href="pravidla.html" class="active">Pravidlá</a></li>
+                <li><a href="otvorenia.html">Otvorenia</a></li>
+                <li><a href="kontakt.html">O mne</a></li>
+            </ul>
+        </nav>
+        <div class="nav-controls">
+            <button class="theme-toggle" id="theme-btn">🌙 Režim</button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <h2>Základné pravidlá šachu</h2>
+    <p style="margin-top: 0.5rem; color: var(--text-muted);">Šach je hra pre dvoch hráčov na šachovnici s 64 políčkami.</p>
+
+    <div class="grid-container" style="margin-top: 2rem;">
+        <div class="card">
+            <h3>♔ Kráľ</h3>
+            <p>Najdôležitejšia figúrka. Pohybuje sa o jedno políčko akýmkoľvek smerom. Cieľom hry je dať súperovmu kráľovi mat.</p>
+        </div>
+        <div class="card">
+            <h3>♕ Dáma</h3>
+            <p>Najsilnejšia figúrka. Pohybuje sa o ľubovoľný počet políčok horizontálne, vertikálne aj diagonálne.</p>
+        </div>
+        <div class="card">
+            <h3>♖ Veža</h3>
+            <p>Pohybuje sa o ľubovoľný počet políčok po riadkoch a stĺpcoch (horizontálne a vertikálne).</p>
+        </div>
+        <div class="card">
+            <h3>♗ Strelec</h3>
+            <p>Pohybuje sa o ľubovoľný počet políčok šikmo (diagonálne). Každý strelec zostáva na svojej farbe políčka.</p>
+        </div>
+        <div class="card">
+            <h3>♘ Jazdec</h3>
+            <p>Pohybuje sa do tvaru písmena "L". Ako jediná figúrka môže presakovať ostatné figúrky.</p>
+        </div>
+        <div class="card">
+            <h3>♙ Pešiak</h3>
+            <p>Pohybuje sa o jedno pole dopredu (z východiskovej pozície môže o dve). Berie šikmo o jedno pole.</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Šachový Portál | Školský projekt</p>
+</footer>
+
+<button id="back-to-top" title="Späť hore">↑</button>
+
+<script>
+    const themeBtn = document.getElementById('theme-btn');
+    themeBtn.addEventListener('click', () => {
+        const currentTheme = document.body.getAttribute('data-theme');
+        if (currentTheme === 'light') {
+            document.body.removeAttribute('data-theme');
+            themeBtn.textContent = '🌙 Režim';
+        } else {
+            document.body.setAttribute('data-theme', 'light');
+            themeBtn.textContent = '☀️ Režim';
+        }
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) backToTopBtn.style.display = 'block';
+        else backToTopBtn.style.display = 'none';
+    });
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+</body>
+</html>

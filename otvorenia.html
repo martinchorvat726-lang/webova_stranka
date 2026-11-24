@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Šachový Portál - Otvorenia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">♔ Šachový<span>Portál</span></div>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Domov</a></li>
+                <li><a href="pravidla.html">Pravidlá</a></li>
+                <li><a href="otvorenia.html" class="active">Otvorenia</a></li>
+                <li><a href="hraci.html">Hráči</a></li>
+                <li><a href="kontakt.html">O mne</a></li>
+            </ul>
+        </nav>
+        <div class="nav-controls">
+            <button class="theme-toggle" id="theme-btn">🌙 Režim</button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <h2>Najznámejšie šachové otvorenia</h2>
+    <p style="margin-bottom: 2rem; color: var(--text-muted);">Prvé ťahy určujú charakter celej šachovej partie. Tu je prehľad 10 kľúčových otvorení:</p>
+
+    <div class="grid-container">
+        <div class="card">
+            <h3>1. Sicílska obrana</h3>
+            <p><strong>Ťah:</strong> 1. e4 c5</p>
+            <p>Najobľúbenejšia a najagresívnejšia odpoveď čierneho na prvý ťah bieleho.</p>
+        </div>
+        <div class="card">
+            <h3>2. Španielska hra</h3>
+            <p><strong>Ťah:</strong> 1. e4 e5 2. Jf3 Jc6 3. Sb5</p>
+            <p>Jedno z najstarších a najhlbšie preskúmaných otvorení v histórii šachu.</p>
+        </div>
+        <div class="card">
+            <h3>3. Dámsky gambit</h3>
+            <p><strong>Ťah:</strong> 1. d4 d5 2. c4</p>
+            <p>Klasické a solídne otvorenie, kde biely ponúka pešiaka výmenou za kontrolu nad centrom.</p>
+        </div>
+        <div class="card">
+            <h3>4. Kráľovský gambit</h3>
+            <p><strong>Ťah:</strong> 1. e4 e5 2. f4</p>
+            <p>Romantické, vysoko útočné otvorenie plné ostrých a zaujímavej kombinácií.</p>
+        </div>
+        <div class="card">
+            <h3>5. Talianska hra</h3>
+            <p><strong>Ťah:</strong> 1. e4 e5 2. Jf3 Jc6 3. Sc4</p>
+            <p>Otvorenie zamerané na rýchly vývin figúrok a útok na slabé miesto f7.</p>
+        </div>
+        <div class="card">
+            <h3>6. Francúzska obrana</h3>
+            <p><strong>Ťah:</strong> 1. e4 e6</p>
+            <p>Pevná a pozičná obrana, ktorá často vytvára uzavretý charakter boja.</p>
+        </div>
+        <div class="card">
+            <h3>7. Caro-Kannova obrana</h3>
+            <p><strong>Ťah:</strong> 1. e4 c6</p>
+            <p>Veľmi solídna odpoveď čierneho, ktorá sa podobá Francúzskej obrane, ale nezatvára strelca.</p>
+        </div>
+        <div class="card">
+            <h3>8. Kráľovská indická obrana</h3>
+            <p><strong>Ťah:</strong> 1. d4 Jf6 2. c4 g6</p>
+            <p>Hypermoderné otvorenie, kde čiernynecháva centrum bielym, aby ho neskôr napadol.</p>
+        </div>
+        <div class="card">
+            <h3>9. Nimcovičova indická obrana</h3>
+            <p><strong>Ťah:</strong> 1. d4 Jf6 2. c4 e6 3. Jc3 Sb4</p>
+            <p>Flexibilné a strategicky bohaté otvorenie zabraňujúce bielemu obsadiť centrum.</p>
+        </div>
+        <div class="card">
+            <h3>10. English opening (Anglická hra)</h3>
+            <p><strong>Ťah:</strong> 1. c4</p>
+            <p>Flexibilné flankové otvorenie, ktoré často prechádza do rôznych pozičných štruktúr.</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Šachový Portál | Školský projekt</p>
+</footer>
+
+<button id="back-to-top" title="Späť hore">↑</button>
+
+<script>
+    const themeBtn = document.getElementById('theme-btn');
+    themeBtn.addEventListener('click', () => {
+        const currentTheme = document.body.getAttribute('data-theme');
+        if (currentTheme === 'light') {
+            document.body.removeAttribute('data-theme');
+            themeBtn.textContent = '🌙 Režim';
+        } else {
+            document.body.setAttribute('data-theme', 'light');
+            themeBtn.textContent = '☀️ Režim';
+        }
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) backToTopBtn.style.display = 'block';
+        else backToTopBtn.style.display = 'none';
+    });
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+</body>
+</html>

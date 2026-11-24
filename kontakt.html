@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Šachový Portál - O mne</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">♔ Šachový<span>Portál</span></div>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Domov</a></li>
+                <li><a href="pravidla.html">Pravidlá</a></li>
+                <li><a href="otvorenia.html">Otvorenia</a></li>
+                <li><a href="hraci.html">Hráči</a></li>
+                <li><a href="kontakt.html" class="active">O mne</a></li>
+            </ul>
+        </nav>
+        <div class="nav-controls">
+            <button class="theme-toggle" id="theme-btn">🌙 Režim</button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="card" style="max-width: 600px; margin: 0 auto;">
+        <h2>O autorovi</h2>
+        <p style="margin-top: 1rem;">Tento web vznikol ako školský projekt zameraný na tvorbu responzívnych webových stránok v HTML, CSS a JavaScript-e.</p>
+
+        <h3 style="margin-top: 1.5rem;">Kontakt</h3>
+        <ul style="list-style: none; margin-top: 0.5rem;">
+            <li><strong>Autor:</strong> Martin Chorvát</li>
+            <li><strong>Predmet:</strong> Multimédiá / Webové technológie</li>
+            <li><strong>Téma:</strong> Šach a šachová stratégia</li>
+        </ul>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Šachový Portál | Školský projekt</p>
+</footer>
+
+<button id="back-to-top" title="Späť hore">↑</button>
+
+<script>
+    const themeBtn = document.getElementById('theme-btn');
+    themeBtn.addEventListener('click', () => {
+        const currentTheme = document.body.getAttribute('data-theme');
+        if (currentTheme === 'light') {
+            document.body.removeAttribute('data-theme');
+            themeBtn.textContent = '🌙 Režim';
+        } else {
+            document.body.setAttribute('data-theme', 'light');
+            themeBtn.textContent = '☀️ Režim';
+        }
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) backToTopBtn.style.display = 'block';
+        else backToTopBtn.style.display = 'none';
+    });
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+</body>
+</html>

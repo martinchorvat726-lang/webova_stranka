@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Šachový Portál - Domov</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="logo">♔ Šachový<span>Portál</span></div>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Domov</a></li>
+        <li><a href="pravidla.html">Pravidlá</a></li>
+        <li><a href="otvorenia.html">Otvorenia</a></li>
+        <li><a href="hraci.html">Hráči</a></li>
+        <li><a href="kontakt.html">O mne</a></li>
+      </ul>
+    </nav>
+    <div class="nav-controls">
+      <button class="theme-toggle" id="theme-btn">🌙 Režim</button>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Hlavná úvodná sekcia (Hero) -->
+  <section class="hero">
+    <h1>Svet Kráľovskej Hry</h1>
+    <p>Objavte krásu, hĺbku, stratégiu a taktiku šachu na jednom mieste. Staňte sa lepším hráčom.</p>
+  </section>
+
+  <!-- Sekcia: Rýchle štatistiky / Zhrnutie šachu -->
+  <section style="margin: 3rem 0;">
+    <h2 style="text-align: center; margin-bottom: 2rem;">Šach v skratke</h2>
+    <div class="grid-container">
+      <div class="card" style="text-align: center;">
+        <h3 style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 0.5rem;">64</h3>
+        <p><strong>Políčok</strong> na štandardnej šachovnici (striedanie bielej a čiernej farby).</p>
+      </div>
+      <div class="card" style="text-align: center;">
+        <h3 style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 0.5rem;">32</h3>
+        <p><strong>Figúrok</strong> celkovo vstupuje do každej novej partie (16 pre každého hráča).</p>
+      </div>
+      <div class="card" style="text-align: center;">
+        <h3 style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 0.5rem;">1500+</h3>
+        <p><strong>Rokov histórie</strong> má za sebou táto logická hra, ktorej korene siahajú do Indie.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sekcia: Hlavné piliere portálu -->
+  <section style="margin: 3rem 0;">
+    <h2>Čo všetko na portáli nájdete</h2>
+    <div class="grid-container">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1586165368502-1bad197a6461?auto=format&fit=crop&w=500&q=80" alt="Šachové pravidlá">
+        <h3>Základné pravidlá</h3>
+        <p>Podrobné návody na pohyb jednotlivých figúrok, špeciálne ťahy ako rošáda či br en passant.</p>
+        <a href="pravidla.html" style="display: inline-block; margin-top: 1rem; color: var(--accent-color); font-weight: 600; text-decoration: none;">Zistiť viac &rarr;</a>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1560174038-da43ac74f01b?auto=format&fit=crop&w=500&q=80" alt="Šachové otvorenia">
+        <h3>Populárne otvorenia</h3>
+        <p>Prehľad 10 najznámejších otváracích stratégií, ktoré vám pomôžu získať prevahu hneď od začiatku.</p>
+        <a href="otvorenia.html" style="display: inline-block; margin-top: 1rem; color: var(--accent-color); font-weight: 600; text-decoration: none;">Prezrieť otvorenia &rarr;</a>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=500&q=80" alt="Šachová komunita">
+        <h3>Tipy pre začiatočníkov</h3>
+        <p>Zistite, ako trénovať pamäť, predvídať ťahy súpera a vyhnúť sa najčastejším chybám.</p>
+        <a href="kontakt.html" style="display: inline-block; margin-top: 1rem; color: var(--accent-color); font-weight: 600; text-decoration: none;">Kontakt & O mne &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sekcia: Zaujímavý citát -->
+  <section class="card" style="margin: 3rem 0; text-align: center; background: linear-gradient(135deg, var(--card-bg), var(--header-bg)); padding: 2.5rem;">
+    <h3 style="color: var(--accent-color); margin-bottom: 1rem;">Myšlienka dňa</h3>
+    <blockquote style="font-size: 1.2rem; font-style: italic; margin-bottom: 1rem;">
+      "Šach je život v miniatúre. Šachová hra je boj, šachová hra je umenie a šachová hra je veda."
+    </blockquote>
+    <p style="color: var(--text-muted);">— Garry Kasparov</p>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Šachový Portál | Školský projekt</p>
+</footer>
+
+<button id="back-to-top" title="Späť hore">↑</button>
+
+<script>
+  // Tmavý / Svetlý režim
+  const themeBtn = document.getElementById('theme-btn');
+  themeBtn.addEventListener('click', () => {
+    const currentTheme = document.body.getAttribute('data-theme');
+    if (currentTheme === 'light') {
+      document.body.removeAttribute('data-theme');
+      themeBtn.textContent = '🌙 Režim';
+    } else {
+      document.body.setAttribute('data-theme', 'light');
+      themeBtn.textContent = '☀️ Režim';
+    }
+  });
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // Tlačidlo Späť hore
+  const backToTopBtn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.style.display = 'block';
+    } else {
+      backToTopBtn.style.display = 'none';
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>
